@@ -4,6 +4,7 @@ import 'package:narvepos/core/components/buttons.dart';
 import 'package:narvepos/core/components/custom_text_field.dart';
 import 'package:narvepos/core/components/spaces.dart';
 import 'package:narvepos/core/constants/colors.dart';
+import 'package:narvepos/presentations/pages/main_page.dart';
 
 class SignInPages extends StatefulWidget {
   const SignInPages({super.key});
@@ -76,10 +77,17 @@ class _SignInPagesState extends State<SignInPages> {
                   label: 'Password',
                   obscureText: true,
                 ),
-                const SpaceHeight(15.0),
+                const SpaceHeight(40.0),
                 Button.filled(
                   height: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainPages(),
+                      ),
+                    );
+                  },
                   label: 'Sign In',
                 )
               ],
